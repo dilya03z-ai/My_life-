@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f7fb">
+  <title>My Life</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-shell">
+
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">✳</div>
+        <span>my life<span class="brand-dot">.</span></span>
+      </div>
+
+      <div class="sidebar-label">MENU</div>
+      <nav class="side-nav">
+        <button class="nav-link active" data-page="home">⌂ <span>Главная</span></button>
+        <button class="nav-link" data-page="calendar">▦ <span>Календарь</span></button>
+        <button class="nav-link" data-page="finance">◉ <span>Финансы</span></button>
+        <button class="nav-link" data-page="nutrition">♡ <span>Питание</span></button>
+        <button class="nav-link" data-page="fitness">✧ <span>Тренировки</span></button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-label">PERSONAL</div>
+        <button class="nav-link" data-page="notes">✎ <span>Заметки</span></button>
+        <button class="nav-link" data-page="habits">☼ <span>Привычки</span></button>
+      </div>
+
+      <div class="profile">
+        <div class="avatar">M</div>
+        <div><strong>My space</strong><small>Personal dashboard</small></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="mobile-brand">✳ my life.</div>
+        <div class="topbar-right">
+          <span class="today-label" id="header-date"></span>
+          <div class="top-avatar">M</div>
+        </div>
+      </header>
+
+      <section class="welcome">
+        <div>
+          <p class="eyebrow">YOUR PERSONAL SPACE</p>
+          <h1>Твоя жизнь,<br><span>в твоём ритме.</span></h1>
+          <p class="welcome-subtitle">Немного порядка. Больше пространства для себя.</p>
+        </div>
+        <div class="welcome-decoration">✳</div>
+      </section>
+
+      <section class="dashboard-grid">
+
+        <article class="card tasks-card">
+          <div class="card-heading">
+            <div>
+              <p class="card-kicker">TODAY</p>
+              <h2>Мои задачи</h2>
+            </div>
+            <span class="soft-icon">✎</span>
+          </div>
+          <div class="task-progress">
+            <div class="progress-track"><div id="task-progress-fill"></div></div>
+            <span id="task-count">0 / 0</span>
+          </div>
+          <div id="task-list" class="task-list"></div>
+          <form id="task-form" class="task-form">
+            <input id="task-input" placeholder="+ Добавить задачу..." autocomplete="off">
+            <button aria-label="Добавить задачу">+</button>
+          </form>
+        </article>
+
+        <article class="card date-card">
+          <p class="card-kicker">YOUR DAY</p>
+          <h2 id="day-number">14</h2>
+          <p id="day-name">Ноябрь</p>
+          <div class="date-divider"></div>
+          <p class="date-note">Каждый день — новая возможность ✨</p>
+        </article>
+
+        <article class="card finance-card">
+          <div class="card-heading">
+            <div>
+              <p class="card-kicker">FINANCE OVERVIEW</p>
+              <h2>Мои финансы</h2>
+            </div>
+            <span class="soft-icon">↗</span>
+          </div>
+          <p class="finance-caption">Текущий баланс</p>
+          <div class="balance" id="balance">0 ₸</div>
+          <div class="finance-stats">
+            <div><span>Доходы</span><strong id="income">0 ₸</strong></div>
+            <div><span>Расходы</span><strong id="expenses">0 ₸</strong></div>
+          </div>
+          <button class="text-button" data-page="finance">Открыть финансы →</button>
+        </article>
+
+        <article class="card habits-card">
+  <div class="card-heading">
+    <div>
+      <p class="card-kicker">SMALL STEPS</p>
+      <h2>Мои привычки</h2>
+    </div>
+    <span class="soft-icon">♡</span>
+  </div>
+
+  <div class="habits-progress">
+    <div class="habits-progress-info">
+      <span>Прогресс за сегодня</span>
+      <strong id="habit-progress-text">0 из 0</strong>
+    </div>
+
+    <div class="progress-track">
+      <div id="habit-progress-fill"></div>
+    </div>
+  </div>
+
+  <div id="habits-list" class="habits-list"></div>
+
+  <form id="habit-form" class="habit-form">
+    <input
+      type="text"
+      id="habit-input"
+      placeholder="+ Новая привычка..."
+      maxlength="60"
+      autocomplete="off"
+    >
+    <button type="submit" aria-label="Добавить привычку">+</button>
+  </form>
+</article>
+
+        <article class="card quote-card">
+          <span class="quote-mark">“</span>
+          <p>Тебе не нужно успевать всё. Достаточно двигаться в своём направлении.</p>
+          <span class="quote-caption">A LITTLE REMINDER</span>
+        </article>
+
+      </section>
+
+      <footer>Made with care <span>✳</span> My Life</footer>
+    </main>
+  </div>
+
+  <nav class="mobile-nav">
+    <button class="active" data-page="home">⌂<small>Главная</small></button>
+    <button data-page="calendar">▦<small>Календарь</small></button>
+    <button data-page="finance">◉<small>Финансы</small></button>
+    <button data-page="notes">✎<small>Заметки</small></button>
+    <button data-page="nutrition">♡<small>Питание</small></button>
+    <button data-page="fitness">✧<small>Спорт</small></button>
+  </nav>
+
+  <script src="pwa.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

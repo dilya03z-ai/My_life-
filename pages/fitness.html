@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f1fa">
+  <title>Спорт — My Life</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="manifest" href="../manifest.json">
+</head>
+
+<body>
+
+  <div class="fitness-page">
+
+    <!-- HEADER -->
+
+    <header class="fitness-header">
+      <a href="../index.html" class="back-link">← Главная</a>
+      <p class="card-kicker">MY LIFE PLANNER</p>
+      <h1>Спорт</h1>
+      <p>Двигайся. Развивайся. Заботься о себе ♡</p>
+    </header>
+
+    <main class="fitness-main">
+
+      <!-- WEEKLY PROGRESS -->
+
+      <section class="fitness-progress">
+
+        <div class="fitness-week-heading">
+          <div>
+            <h2>Твой прогресс за неделю</h2>
+            <span id="fitness-week-label"></span>
+          </div>
+
+          
+<div class="fitness-week-controls">
+  <button type="button" id="fitness-prev-week">‹</button>
+  <button type="button" id="fitness-next-week">›</button>
+  <button type="button" id="fitness-month-button" class="fitness-month-button">
+    Месяц
+  </button>
+</div>
+
+        </div>
+
+        <div class="fitness-progress-info">
+          <p>
+            <span id="fitness-progress-count">0</span> / 7
+          </p>
+          <span>дней с тренировками</span>
+        </div>
+
+        <div
+          id="fitness-progress-days"
+          class="fitness-progress-days">
+        </div>
+
+      </section>
+
+
+      <!-- MEDITATION -->
+
+      <section class="meditation-card">
+
+        <div class="meditation-card-info">
+          <span class="meditation-icon">☾</span>
+          <h2>Медитация</h2>
+          <p>Время для себя и внутреннего спокойствия</p>
+        </div>
+
+        <button type="button" id="open-meditation">
+          Открыть →
+        </button>
+
+      </section>
+
+
+      <!-- WORKOUTS -->
+
+      <section class="fitness-workouts">
+
+        <div class="fitness-section-header">
+          <h2>Мои тренировки</h2>
+
+          <button type="button" id="add-workout-button">
+            + Добавить
+          </button>
+        </div>
+
+        <div
+          id="fitness-workout-grid"
+          class="fitness-workout-grid">
+        </div>
+
+      </section>
+
+
+      <!-- WORKOUT DETAILS -->
+
+      <section
+        id="fitness-detail"
+        class="fitness-detail hidden">
+
+        <div class="fitness-detail-header">
+
+          <button type="button" id="back-to-workouts">
+            ← Назад
+          </button>
+
+          <h2 id="fitness-detail-title"></h2>
+
+        </div>
+
+        <div class="fitness-detail-actions">
+
+          <button type="button" id="add-video-button">
+            + Добавить видео
+          </button>
+
+          <button
+            type="button"
+            id="delete-workout-button"
+            class="fitness-delete-workout">
+            Удалить категорию
+          </button>
+
+        </div>
+
+        <div
+          id="fitness-video-list"
+          class="fitness-video-list">
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- WORKOUT MODAL -->
+
+  <div id="workout-modal" class="fitness-modal hidden">
+
+    <div class="fitness-modal-content">
+
+      <div class="fitness-modal-header">
+        <h2>Новая тренировка</h2>
+
+        <button type="button" id="close-workout-modal">
+          ×
+        </button>
+      </div>
+
+      <label for="workout-name">
+        Название тренировки
+      </label>
+
+      <input
+        type="text"
+        id="workout-name"
+        placeholder="Например, Растяжка">
+
+      <button type="button" id="save-workout-button">
+        Сохранить
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- VIDEO MODAL -->
+
+  <div id="video-modal" class="fitness-modal hidden">
+
+    <div class="fitness-modal-content">
+
+      <div class="fitness-modal-header">
+        <h2>Добавить видео</h2>
+
+        <button type="button" id="close-video-modal">
+          ×
+        </button>
+      </div>
+
+      <label for="video-name">
+        Название видео
+      </label>
+
+      <input
+        type="text"
+        id="video-name"
+        placeholder="Например, Йога для начинающих">
+
+      <label for="video-link">
+        Ссылка на YouTube
+      </label>
+
+      <input
+        type="url"
+        id="video-link"
+        placeholder="Вставь ссылку на видео">
+
+      <button type="button" id="save-video-button">
+        Сохранить
+      </button>
+
+    </div>
+
+  </div>
+
+
+<!-- MONTH CALENDAR MODAL -->
+
+<div id="fitness-month-modal" class="fitness-modal hidden">
+
+  <div class="fitness-modal-content fitness-calendar-modal">
+
+    <div class="fitness-modal-header">
+      <h2>История тренировок</h2>
+
+      <button type="button" id="close-fitness-month">
+        ×
+      </button>
+    </div>
+
+    <div class="fitness-calendar-heading">
+
+      <button type="button" id="fitness-prev-month">‹</button>
+
+      <h3 id="fitness-month-title">Ноябрь 2026</h3>
+
+      <button type="button" id="fitness-next-month">›</button>
+
+    </div>
+
+    <div class="fitness-calendar-weekdays">
+      <span>Пн</span>
+      <span>Вт</span>
+      <span>Ср</span>
+      <span>Чт</span>
+      <span>Пт</span>
+      <span>Сб</span>
+      <span>Вс</span>
+    </div>
+
+    <div
+      id="fitness-month-grid"
+      class="fitness-month-grid">
+    </div>
+
+    <div class="fitness-calendar-legend">
+      <span class="fitness-calendar-dot"></span>
+      <span>День с тренировкой</span>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- MOBILE BOTTOM NAVIGATION -->
+
+<nav class="mobile-nav">
+
+  <a href="../index.html">
+    ⌂
+    <small>Главная</small>
+  </a>
+
+  <a href="calendar.html">
+    ▦
+    <small>Календарь</small>
+  </a>
+
+  <a href="finance.html">
+    ◉
+    <small>Финансы</small>
+  </a>
+
+  <a href="notes.html">
+    ✎
+    <small>Заметки</small>
+  </a>
+
+  <a href="nutrition.html">
+    ♡
+    <small>Питание</small>
+  </a>
+
+  <a href="fitness.html" class="active">
+    ✧
+    <small>Спорт</small>
+  </a>
+
+</nav>
+
+  <script src="fitness.js"></script>
+<script src="../pwa.js"></script>
+</body>
+</html>

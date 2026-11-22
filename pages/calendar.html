@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Календарь — My Life</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="manifest" href="../manifest.json">
+</head>
+<body>
+
+  <div class="calendar-page">
+    <header class="calendar-header">
+      <a href="../index.html" class="back-link">← Главная</a>
+      <p class="card-kicker">MY LIFE PLANNER</p>
+      <h1>Мой календарь</h1>
+      <p>Планируй важное, не забывай о приятном.</p>
+    </header>
+
+    <main>
+      <div class="calendar-layout">
+
+  <section class="card calendar-main">
+    <div class="calendar-top">
+      <h2 id="calendar-month">Ноябрь 2026</h2>
+
+      <div class="calendar-controls">
+        <button id="prev-month" type="button">‹</button>
+        <button id="next-month" type="button">›</button>
+      </div>
+    </div>
+
+    <div class="calendar-weekdays">
+      <span>Пн</span>
+      <span>Вт</span>
+      <span>Ср</span>
+      <span>Чт</span>
+      <span>Пт</span>
+      <span>Сб</span>
+      <span>Вс</span>
+    </div>
+
+    <div class="calendar-days" id="calendar-days"></div>
+  </section>
+
+  
+<section class="card calendar-events">
+  <p class="card-kicker">YOUR DAY</p>
+
+  <h2 id="selected-date">Выбери дату</h2>
+
+  <div id="events-list" class="events-list">
+    <p class="events-empty">На этот день пока нет событий ✨</p>
+  </div>
+
+  <div class="event-form-wrapper">
+    <h3>Добавить событие</h3>
+
+    <form id="event-form">
+      <label for="event-title">Название</label>
+      <input
+  type="text"
+  id="event-title"
+  required
+>
+
+      <label for="event-time">Время</label>
+      <input type="time" id="event-time">
+
+
+<label for="event-category">Категория</label>
+<select id="event-category">
+  <option value="personal">Личное</option>
+  <option value="work">Работа</option>
+  <option value="health">Здоровье</option>
+  <option value="rest">Отдых</option>
+  <option value="other">Другое</option>
+</select> 
+
+      <label for="event-description">Описание</label>
+      <textarea
+        id="event-description"
+        placeholder="Дополнительные заметки..."
+        rows="3"
+      ></textarea>
+
+      <button type="submit" class="event-submit">
+        + Сохранить событие
+      </button>
+    </form>
+  </div>
+</section>
+
+
+</div>
+      </section>
+
+<div id="edit-modal" class="edit-modal hidden">
+  <div class="edit-modal-content">
+
+    <div class="edit-modal-header">
+      <h2>Изменить событие</h2>
+      <button type="button" id="close-edit-modal">×</button>
+    </div>
+
+    <form id="edit-event-form">
+
+      <input type="hidden" id="edit-event-id">
+
+      <label for="edit-event-title">Название</label>
+      <input type="text" id="edit-event-title" required>
+
+      <label for="edit-event-date">Дата</label>
+      <input type="date" id="edit-event-date" required>
+
+      <label for="edit-event-time">Время</label>
+      <input type="time" id="edit-event-time">
+
+      <label for="edit-event-category">Категория</label>
+      <select id="edit-event-category">
+        <option value="personal">Личное</option>
+        <option value="work">Работа</option>
+        <option value="health">Здоровье</option>
+        <option value="rest">Отдых</option>
+        <option value="other">Другое</option>
+      </select>
+
+      <label for="edit-event-description">Описание</label>
+      <textarea id="edit-event-description" rows="3"></textarea>
+
+      <button type="submit" class="event-submit">
+        Сохранить изменения
+      </button>
+
+    </form>
+  </div>
+</div>
+
+    </main>
+  </div>
+<script src="../pwa.js"></script>
+</body>
+
+<!-- MOBILE BOTTOM NAVIGATION -->
+
+<nav class="mobile-nav">
+
+  <a href="../index.html">
+    ⌂
+    <small>Главная</small>
+  </a>
+
+  <a href="calendar.html">
+    ▦
+    <small>Календарь</small>
+  </a>
+
+  <a href="finance.html">
+    ◉
+    <small>Финансы</small>
+  </a>
+
+  <a href="notes.html">
+    ✎
+    <small>Заметки</small>
+  </a>
+
+  <a href="nutrition.html">
+    ♡
+    <small>Питание</small>
+  </a>
+
+  <a href="fitness.html">
+    ✧
+    <small>Спорт</small>
+  </a>
+
+</nav>
+
+<script src="calendar.js"></script>
+</html>

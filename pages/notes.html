@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заметки — My Life</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="manifest" href="../manifest.json">
+</head>
+<body>
+
+  <div class="notes-page">
+    <header class="notes-header">
+      <a href="../index.html" class="back-link">← Главная</a>
+      <p class="card-kicker">MY LIFE PLANNER</p>
+      <h1>Мои заметки</h1>
+      <p>Всё важное — в одном месте.</p>
+    </header>
+
+    <main class="notes-main">
+
+      <div class="notes-top">
+        <h2>Все заметки</h2>
+        <button id="add-note-button" type="button">+</button>
+      </div>
+
+      <div id="notes-list" class="notes-list">
+        <p class="notes-empty">Здесь пока пусто ✨</p>
+      </div>
+      <div id="note-editor" class="note-editor hidden">
+
+  <div class="note-editor-header">
+    <span id="note-editor-date"></span>
+    <button type="button" id="close-note-editor">×</button>
+  </div>
+
+  <textarea id="note-content" placeholder="Напиши что-нибудь..."></textarea>
+
+  <button type="button" id="save-note-button">
+    Сохранить
+  </button>
+
+</div>
+
+    </main>
+  </div>
+
+  <script src="notes.js"></script>
+
+
+<nav class="mobile-nav">
+
+  <a href="../index.html">
+    ⌂
+    <small>Главная</small>
+  </a>
+
+  <a href="calendar.html">
+    ▦
+    <small>Календарь</small>
+  </a>
+
+  <a href="finance.html">
+    ◉
+    <small>Финансы</small>
+  </a>
+
+  <a href="notes.html" class="active">
+    ✎
+    <small>Заметки</small>
+  </a>
+
+  <a href="nutrition.html">
+    ♡
+    <small>Питание</small>
+  </a>
+
+  <a href="fitness.html">
+    ✧
+    <small>Спорт</small>
+  </a>
+
+</nav>
+<script src="../pwa.js"></script>
+</body>
+</html>

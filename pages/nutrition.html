@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Питание — My Life</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="manifest" href="../manifest.json">
+</head>
+<body>
+
+  <div class="nutrition-page">
+
+    <header class="nutrition-header">
+      <a href="../index.html" class="back-link">← Главная</a>
+      <p class="card-kicker">MY LIFE PLANNER</p>
+      <h1>Моё питание</h1>
+      <p>Планируй меню на неделю 💜</p>
+    </header>
+
+    <main class="nutrition-main">
+
+      <section class="card nutrition-planner">
+
+        <div class="nutrition-week-header">
+          <h2 id="nutrition-week-title">Меню на неделю</h2>
+
+          <div class="nutrition-week-controls">
+            <button id="prev-week" type="button">‹</button>
+            <button id="next-week" type="button">›</button>
+          </div>
+        </div>
+
+        <div id="nutrition-week" class="nutrition-week"></div>
+
+      </section>
+
+    </main>
+
+<!-- MEAL EDITOR -->
+
+<div id="meal-modal" class="meal-modal hidden">
+
+  <div class="meal-modal-content">
+
+    <div class="meal-modal-header">
+      <h2 id="meal-modal-title">Добавить блюдо</h2>
+      <button type="button" id="close-meal-modal">×</button>
+    </div>
+
+    <label for="meal-name">Название блюда</label>
+    <input type="text" id="meal-name">
+
+    <label for="meal-photo">Фотография</label>
+    <input
+      type="file"
+      id="meal-photo"
+      accept="image/*"
+    >
+
+    <div id="meal-photo-preview" class="meal-photo-preview"></div>
+
+    <button type="button" id="save-meal-button">
+      Сохранить
+    </button>
+
+  </div>
+</div>
+
+  </div>
+
+  <script src="nutrition.js"></script>
+
+<nav class="mobile-nav">
+
+  <a href="../index.html">
+    ⌂
+    <small>Главная</small>
+  </a>
+
+  <a href="calendar.html">
+    ▦
+    <small>Календарь</small>
+  </a>
+
+  <a href="finance.html">
+    ◉
+    <small>Финансы</small>
+  </a>
+
+  <a href="notes.html" class="active">
+    ✎
+    <small>Заметки</small>
+  </a>
+
+  <a href="nutrition.html">
+    ♡
+    <small>Питание</small>
+  </a>
+
+  <a href="fitness.html">
+    ✧
+    <small>Спорт</small>
+  </a>
+
+</nav>
+<script src="../pwa.js"></script>
+</body>
+</html>
